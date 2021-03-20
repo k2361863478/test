@@ -19,10 +19,10 @@ def pyMuPDF_fitz(pdfPath, imagePath):
         if not os.path.exists(imagePath):  
             os.makedirs(imagePath)  
 
-        pix.writePNG(imagePath + '/' + 'images_%s.png' % pg) 
+        pix.writePNG(imagePath + '/' + 'images_%s.jpg' % pg) 
     print('结束处理')    
 
 if __name__ == "__main__":
-    pdfPath = '01.pdf'
+    pdfPath = 'example.pdf'
     imagePath = './imgs'
     pyMuPDF_fitz(pdfPath, imagePath)
