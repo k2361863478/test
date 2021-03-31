@@ -10,8 +10,8 @@ def pyMuPDF_fitz(pdfPath, imagePath):
     for pg in range(pdfDoc.pageCount):
         page = pdfDoc[pg]
         rotate = int(0)
-        zoom_x = 2
-        zoom_y = 2
+        zoom_x = 5
+        zoom_y = 5
         mat = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)
         
         pix = page.getPixmap(matrix=mat,alpha=False)
@@ -19,7 +19,7 @@ def pyMuPDF_fitz(pdfPath, imagePath):
         if not os.path.exists(imagePath):  
             os.makedirs(imagePath)  
 
-        pix.writePNG(imagePath + '/' + 'images_%s.jpg' % pg) 
+        pix.writePNG(imagePath + '/' + str(pg)+'.png') 
     print('结束处理')    
 
 if __name__ == "__main__":
