@@ -1,1 +1,2 @@
-import numbers
+import pytesseract
+import numpy
